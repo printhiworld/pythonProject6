@@ -18,7 +18,7 @@ jobs:
     env:
       DB_USER: flask_app
       DB_PASSWORD: 123456
-      DB_NAME: pg
+      DB_NAME: flask_app
     steps:
       - name: clone code
         uses: actions/checkout@v3
