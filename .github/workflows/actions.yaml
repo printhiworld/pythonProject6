@@ -28,7 +28,7 @@ jobs:
           cat deploy_ci/docker-compose-ci.yaml | envsubst > deploy_ci/docker-compose.yaml
           cat docker-ci-config.py | envsubst > deploy_ci/docker_config.py
       - name: copy files to server
-        uses: appleboy/scp-action@0.1.4
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
