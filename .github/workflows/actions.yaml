@@ -28,7 +28,7 @@ jobs:
           cat deploy_ci/docker-compose-ci.yaml | envsubst > deploy_ci/docker-compose.yaml
           cat docker-ci-config.py | envsubst > deploy_ci/docker_config.py
       - name: copy files to server
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -37,7 +37,7 @@ jobs:
           target: "flask_app_ci"
           strip_components: 1
       - name: deploy app
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
